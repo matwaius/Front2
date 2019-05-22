@@ -8,11 +8,17 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmationService } from 'primeng/api';
 import { Routes,RouterModule} from '@angular/router';
+import { EstadospesquisaComponent } from './estados/estadospesquisa/estadospesquisa.component';
+import { EstadosCadastroComponent } from './estados/estados-cadastro/estados-cadastro.component';
+import { EstadosModule } from './estados/estados.module';
 
 const rotas: Routes = [
   {path: 'categorias', component: CategoriaspesquisaComponent},
   {path: 'categorias/novo', component: CategoriasCadastroComponent},
-  {path: 'categorias/:id', component: CategoriasCadastroComponent}
+  {path: 'categorias/:id', component: CategoriasCadastroComponent},
+  {path: 'estados', component: EstadospesquisaComponent},
+  {path: 'estados/novo', component: EstadosCadastroComponent},
+  {path: 'estados/:id', component: EstadosCadastroComponent}
 ];
 
 @NgModule({
@@ -23,6 +29,7 @@ const rotas: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     CategoriasModule,
+    EstadosModule,
     HttpClientModule,
     RouterModule.forRoot(rotas)
   ],
